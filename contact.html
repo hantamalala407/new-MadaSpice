@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MadaSpiceStore</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-section {
+      padding: 30px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-intro {
+      text-align: center;
+      /*color: #555;*/
+      color: white;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    /* Container */
+    .contact-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Info */
+    .contact-info {
+      flex: 1;
+      min-width: 260px;
+      color: black;
+    }
+
+    .info-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .info-box i {
+      font-size: 30px;
+      color: #4CAF50;
+    }
+
+    /* Formulaire */
+    .contact-form {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      /*width: 100%;*/
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+
+    /* Bouton multicolore */
+    .btn-send {
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: white;
+      /*background: linear-gradient(90deg, #ff00cc, #8000ff);*/
+      background: linear-gradient(90deg, #ff00cc, #8000ff, #0099ff);
+      background-size: 200% 200%;
+      animation: gradientMove 4s ease infinite;
+      transition: transform .3s;
+    }
+
+    .btn-send:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#" class="logo"><img src="images/logo.PNG" alt=""></a>
+    <ul id="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="produit.html">Produits</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="info.html">Info</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <section class="contact-section" id="contact">
+
+    <h2>Contactez-nous</h2>
+    <p class="contact-intro">
+      Une question ? Une commande ? Nous sommes là pour vous répondre.
+    </p>
+
+    <div class="contact-container">
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <div class="info-box">
+          <i class="fa-solid fa-location-dot"></i>
+          <h4>Adresse</h4>
+          <p>Madagascar — Disponible en livraison</p>
+        </div>
+
+        <div class="info-box">
+          <i class="fa-solid fa-phone"></i>
+          <h4>Téléphone</h4>
+          <p>+261 34 00 000 00</p>
+        </div>
+
+        <div class="info-box">
+          <i class="fa-solid fa-envelope"></i>
+          <h4>Email</h4>
+          <p>contact@monentreprise.com</p>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <form class="contact-form">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <textarea placeholder="Votre message" rows="5" required></textarea>
+
+        <button class="btn-send">Envoyer</button>
+      </form>
+
+    </div>
+
+  </section>
+
+  <script src="js/style.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MadaSpiceStore</title>
+  <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .info-section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .info-section p{
+      color: grey;
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    /* CARTES */
+    .info-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: #fff;
+      /*background: rgba(255, 255, 255, 0.7); fond transparent*/
+      padding: 20px;
+      width: 280px;
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card i {
+      font-size: 40px;
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+
+    /* LOCALISATION */
+    .location-box {
+      /*background: #fff;*/
+      background: rgba(255, 255, 255, 0.8);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      text-align: center;
+      margin: auto;
+      max-width: 350px;
+    }
+
+    .location-box i {
+      font-size: 45px;
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .info-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .map-container {
+      max-width: 800px;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#" class="logo"><img src="images/logo.PNG" alt=""></a>
+    <ul id="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="produit.html">Produits</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="#">Info</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <section class="info-section">
+
+  <p class="intro-text" style="color: white;">
+    Nous sommes une entreprise spécialisée dans les produits artisanaux 
+    tels que des paniers, objets naturels et créations uniques.
+    Notre objectif est de partager la beauté de l'art malgache.
+  </p>
+
+  <div class="info-cards" style="color: black;">
+    <div class="card">
+      <i class="fa-solid fa-seedling"></i>
+      <h3>Notre Histoire</h3>
+      <p>Un savoir-faire transmis avec passion.</p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-hand-holding-heart"></i>
+      <h3>Nos Engagements</h3>
+      <p>Produits naturels, faits main et authentiques.</p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-basket-shopping"></i>
+      <h3>Nos Produits</h3>
+      <p>Paniers enfants & femmes, décorations naturelles.</p>
+    </div>
+  </div>
+
+  <div class="location-box">
+    <i class="fa-solid fa-location-dot"></i>
+    <h3 style="color: black;">Où nous trouver ?</h3>
+    <p>Madagascar — disponible partout via livraison locale.</p>
+  </div>
+
+</section>
+
+<div class="map-container">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2650131.829306636!2d7.364156321082312!3d51.13348183971912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47be7b7c0bf5090d%3A0x42197f3c0b01a80!2sAllemagne!5e0!3m2!1sfr!2smg!4v1732636780000" 
+    width="100%" 
+    height="350" 
+    style="border:0; border-radius: 15px;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
+
+  <script src="js/style.js"></script>
+
+</body>
+</html>

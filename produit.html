@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MadaSpiceStore</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  
+  .drop {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+      animation: float 10s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.1); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    /* 🧃 Conteneur des cartes */
+    .card-container {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      /*max-width: 1000px;*/
+    }
+
+    /* 🌿 Style d'une carte */
+    .card {
+      background: rgba(255, 255, 255, 0.7);
+      /*backdrop-filter: blur(10px);*/
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+      padding: 25px;
+      text-align: center;
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      border-radius: 15px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      color: #2f3542;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: #57606f;
+      font-size: 14px;
+    }
+
+    .card button {
+      margin-top: 15px;
+      background: linear-gradient(45deg, #ff6b81, #a29bfe, #00cec9);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.3s, background 0.5s;
+    }
+
+    .card button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #ff9ff3, #7158e2, #3ae374);
+    }
+
+    /* 📱 Responsive : sur mobile, les cartes passent en colonne */
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 90%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#" class="logo"><img src="images/logo.PNG" alt=""></a>
+    <ul id="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="#">Produits</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="info.html">Info</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- 💧 Gouttelettes transparentes -->
+  <div class="drop" style="width:80px; height:80px; top:10%; left:15%; animation-delay:0s;"></div>
+  <div class="drop" style="width:60px; height:60px; top:40%; left:70%; animation-delay:2s;"></div>
+  <div class="drop" style="width:100px; height:100px; top:70%; left:40%; animation-delay:4s;"></div>
+  <div class="drop" style="width:50px; height:50px; top:85%; left:10%; animation-delay:1s;"></div>
+  <div class="drop" style="width:90px; height:90px; top:20%; left:80%; animation-delay:3s;"></div>
+
+  <div class="drop" style="width:60px; height:60px; top:20%; left:50%; animation-delay:0s;"></div>
+  <div class="drop" style="width:60px; height:60px; top:50%; left:30%; animation-delay:2s;"></div>
+  <div class="drop" style="width:100px; height:100px; top:25%; left:20%; animation-delay:4s;"></div>
+  <div class="drop" style="width:50px; height:50px; top:80%; left:70%; animation-delay:1s;"></div>
+  <div class="drop" style="width:90px; height:90px; top:70%; left:75%; animation-delay:3s;"></div>
+
+  <!-- 🌿 Carte produit -->
+  <div class="card-container">
+    <!--div class="card">
+      <img src="https://images.unsplash.com/photo-1616627784231-d69e7cf0a1ed?auto=format&fit=crop&w=400&q=80" alt="Vanille naturelle">
+      <h2>Vanille de Madagascar</h2>
+      <p>Une vanille pure, cultivée artisanalement et séchée au soleil.</p>
+      <button>Découvrir</button>
+    </div-->
+
+    <div class="card">
+      <img src="images/cacao.jpeg" alt="Panier artisanal">
+      <h2>Cacao de Madagascar</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ullam? Eveniet soluta quaerat ducimus?</p>
+      <button>Voir plus</button>
+    </div>
+
+    <div class="card">
+      <img src="images/vanille.jpeg" alt="Huile naturelle">
+      <h2>Vanille de Madagascar</h2>
+      <p>100% bio, issue des plantes locales et extraite à froid pour préserver les arômes.</p>
+      <button>Commander</button>
+    </div>
+
+    <div class="card">
+      <img src="images/poivre.jpeg" alt="Huile naturelle">
+      <h2>Poivre de Madagascar</h2>
+      <p>100% bio, issue des plantes locales et extraite à froid pour préserver les arômes.</p>
+      <button>Commander</button>
+    </div>
+
+    <div class="card">
+      <img src="images/vanille.jpeg" alt="Vanille naturelle">
+      <h2>Vanille de Madagascar</h2>
+      <p>Une vanille pure, cultivée artisanalement et séchée au soleil.</p>
+      <button>Découvrir</button>
+    </div>
+
+    <div class="card">
+      <img src="images/poivre.jpeg" alt="Panier artisanal">
+      <h2>Poivre de Madagascar</h2>
+      <p>Fugit nemo soluta autem, neque aspernatur esse amet incidunt atque magni, illum nesciunt animi pariatur dolorum?</p>
+      <button>Voir plus</button>
+    </div>
+
+    <div class="card">
+      <img src="images/cacao.jpeg" alt="Huile naturelle">
+      <h2>Cacao de Madagascar</h2>
+      <p>100% bio, issue des plantes locales et extraite à froid pour préserver les arômes.</p>
+      <button>Commander</button>
+    </div>
+  </div>
+
+  <script src="js/style.js"></script>
+
+</body>
+</html>

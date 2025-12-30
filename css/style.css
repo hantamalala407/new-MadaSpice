@@ -1,0 +1,510 @@
+/* ---- Style général ---- */
+    /*body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #f4f4f4;
+    }*/
+     /*body {
+        margin: 0;
+        height: 100vh;*/
+        /*display: flex;*/
+        /*justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        color: white;
+        background: linear-gradient(-45deg, #009900, #ff0000, #000000, #ffffff);
+        background-size: 400% 400%;
+        animation: waveColors 10s ease infinite;
+      }
+
+      @keyframes waveColors {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }*/
+
+      html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    min-height: 100svh; /* super important pour mobile */
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background: linear-gradient(
+        -45deg,
+        #009900,
+        #ff0000,
+        #000000,
+        #ffffff
+    );
+    background-size: 400% 400%;
+    animation: waveColors 10s ease infinite;
+}
+
+@keyframes waveColors {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+    /* ---- Navbar ---- */
+    .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Logo */
+    .navbar .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+    }
+
+    /* Liens du menu */
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin: 0 30px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+.navbar ul li a:hover {
+    color: green;
+    font-weight: bold;
+}
+
+    /* ---- Menu hamburger ---- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: black;
+      margin: 4px 0;
+      border-radius: 3px;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navbar ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+
+/* momba ilay sary sy ilay soratra */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+  }
+
+  .text {
+    max-width: 300px;
+  }
+
+  .text h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffdf91;
+  }
+
+  .text p {
+    line-height: 1.6;
+    font-size: 1em;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+  }
+
+  /* --- FORME DERRIÈRE L’IMAGE AVEC ESPACE --- */
+  .background-shape {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: calc(100% + 24px);
+    height: calc(100% + 24px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.8);
+    animation: morph 10s infinite ease-in-out;
+    z-index: 1;
+  }
+
+  /* --- IMAGE --- */
+  .image-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    animation: morph 10s infinite ease-in-out;
+  }
+
+  .image-box img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: slide 12s infinite;
+  }
+
+  .image-box img:nth-child(1) { animation-delay: 0s; }
+  .image-box img:nth-child(2) { animation-delay: 4s; }
+  .image-box img:nth-child(3) { animation-delay: 8s; }
+
+  /* --- ANIMATION DES IMAGES (SLIDE) --- */
+  @keyframes slide {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    33% { opacity: 1; }
+    41% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* --- ANIMATION DES FORMES --- */
+  @keyframes morph {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      border-radius: 15px;
+    }
+    25% {
+      clip-path: polygon(10% 0, 90% 0, 90% 100%, 10% 100%);
+      border-radius: 10px;
+    }
+    50% {
+      clip-path: polygon(20% 0, 80% 0, 100% 100%, 0% 100%);
+      border-radius: 12px;
+    }
+    75% {
+      clip-path: circle(50% at 50% 50%);
+      border-radius: 50%;
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      border-radius: 15px;
+    }
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 700px) {
+    .container {
+      flex-direction: column;
+      /*text-align: center;*/
+    }
+    .container .text{
+      text-align: center;
+    }
+    .text {
+      max-width: 90%;
+    }
+  }
+
+/* mahakasika ilay produits */
+.section-produits {
+   /* padding: 60px 20px;*/
+    /*padding-bottom: 30px;*/
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  .section-produits h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+
+  .produits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .produit {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .produit:hover {
+    transform: scale(1.05);
+  }
+
+  .produit img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%); /* forme trapèze */
+    transition: all 0.5s ease;
+  }
+
+  .produit:hover img {
+    clip-path: circle(50% at 50% 50%); /* devient rond au survol */
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.3s ease;
+  }
+
+  .produit:hover .overlay {
+    height: 100%;
+  }
+
+  .overlay h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .overlay button {
+    background: #ffffff;
+    color: #000;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .overlay button:hover {
+    background: #ff0000;
+    color: #fff;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    .produits {
+      flex-direction: column;
+      align-items: center;
+    }
+    .produit {
+      width: 80vw;
+      height: 250px;
+    }
+  }
+
+  /* ---- Section Texte + Bouton ---- */
+  .info-section {
+    max-width: 350px;
+    text-align: center;
+  }
+
+  .info-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .info-section p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 25px;
+  }
+
+  .btn-multicolor {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(90deg, #ff00cc, #8000ff, #0099ff);
+    background-size: 300% 300%;
+    animation: gradientMove 5s ease infinite;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-multicolor:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    .section-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .produits {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+/* info ao anaty accueil */
+#about h2 {
+  font-weight: 700;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#about img {
+    transition: 0.3s ease;
+    /*width: 250px;*/
+    /*width: 70%;*/
+}
+
+#about img:hover {
+    transform: scale(1.03);
+}
+
+/* contact */
+/*.expand-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 500px;*/
+    /*left: 1195px;*/
+    /*background: linear-gradient(45deg, #ff00c8, #6e00ff);
+    padding: 12px 15px;
+    color: white;
+    border-radius: 30px;*/
+    /*width: 55px;*/
+    /*width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width .3s;
+    text-decoration: none;
+}
+
+.expand-btn:hover {
+    width: 100px;
+}*/
+
+.side-tab {
+    position: fixed;
+    right: 0;
+    top: 40%;
+    color: white;
+    padding: 12px;
+    writing-mode: vertical-rl;
+    border-radius: 12px 0 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+
+    background: linear-gradient(
+        180deg,
+        #00c6ff,
+        #6e00ff,
+        #ff4ecd
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 6s ease infinite;
+
+    box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+}
+@keyframes gradientMove {
+    0% { background-position: 50% 0%; }
+    50% { background-position: 50% 100%; }
+    100% { background-position: 50% 0%; }
+}
+.side-tab:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+/* en savoir plus dans index */
+/* Desktop : alignement normal */
+.about-text {
+    text-align: left;
+}
+
+/* Mobile / tablette */
+@media (max-width: 770px) {
+    .about-text {
+        text-align: center;
+    }
+
+    .about-text h2,
+    .about-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width: 770px) {
+    .about-text {
+        margin-bottom: 20px;
+    }
+
+    .col-md-6 img {
+        max-width: 90%;
+    }
+}
+#about {
+  color: white;
+}
